@@ -113,7 +113,7 @@ TEMPLATE = """
         <input type="submit" value="Calculate"
             style="padding: 8px 16px; background-color: #4CAF50; color: white; border: none; border-radius: 6px; font-size: 14px; cursor: pointer;">
         
-        <a href="/static/guide.pdf" target="_blank"
+        <a href="https://bpdb.portal.gov.bd/sites/default/files/files/bpdb.portal.gov.bd/page/4a0f045a_1415_45f1_9e7c_02a8ed4f103c/2024-03-01-13-45-740f1fb3c50588f18077bdce93250b9a.pdf" target="_blank"
            style="padding: 8px 16px; background-color: #2196F3; color: white; text-decoration: none; border-radius: 6px; font-size: 14px; display: inline-block;">
             📄 View Tariff Rate
         </a>
