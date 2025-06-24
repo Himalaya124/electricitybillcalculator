@@ -7,7 +7,7 @@ TEMPLATE = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3762364160820960"
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3762364160820960"
      crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <title>Electricity Bill Calculator</title>
@@ -24,8 +24,6 @@ TEMPLATE = """
         * {
             box-sizing: border-box;
         }
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3762364160820960"
-     crossorigin="anonymous"></script>
 
         body {
             margin: 0;
@@ -53,8 +51,7 @@ TEMPLATE = """
             width: 95%;
             text-align: center;
         }
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3762364160820960"
-     crossorigin="anonymous"></script>
+        
         h2 {
             color: var(--text);
             margin: 10px 0 5px;
@@ -75,8 +72,6 @@ TEMPLATE = """
             font-size: 16px;
             outline-color: var(--primary);
         }
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3762364160820960"
-     crossorigin="anonymous"></script>
 
         input[type="submit"] {
             padding: 12px 24px;
@@ -99,8 +94,6 @@ TEMPLATE = """
             font-size: 1.1rem;
             color: var(--text);
         }
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3762364160820960"
-     crossorigin="anonymous"></script>
 
         footer {
             margin-top: 30px;
@@ -108,6 +101,8 @@ TEMPLATE = """
             color: #aaa;
         }
     </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3762364160820960"
+     crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
