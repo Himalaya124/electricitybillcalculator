@@ -7,8 +7,6 @@ TEMPLATE = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3762364160820960"
-     crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <title>Electricity Bill Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -103,6 +101,32 @@ TEMPLATE = """
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3762364160820960"
      crossorigin="anonymous"></script>
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3762364160820960"
+     crossorigin="anonymous"></script>
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3762364160820960"
+     crossorigin="anonymous"></script>
+<!-- New -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3762364160820960"
+     data-ad-slot="3452561160"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3762364160820960"
+     crossorigin="anonymous"></script>
+<!-- New -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3762364160820960"
+     data-ad-slot="3452561160"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </head>
 <body>
     <div class="container">
