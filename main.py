@@ -1,6 +1,6 @@
 
-from bangla_speaker import speak_bangla
-from english_speaker import speak_english
+# from bangla_speaker import speak_bangla
+# from english_speaker import speak_english
 print("=" * 60)
 print("Welcome to the Electricity Bill Calculator".center(60))
 print("Created by Nafis".center(60))
