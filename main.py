@@ -7,6 +7,7 @@ TEMPLATE = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
     <meta charset="UTF-8">
     <title>Electricity Bill Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,7 +50,7 @@ TEMPLATE = """
             width: 95%;
             text-align: center;
         }
-        
+
         h2 {
             color: var(--text);
             margin: 10px 0 5px;
@@ -136,11 +137,11 @@ TEMPLATE = """
         <form method="post" style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
     <input type="number" name="unit" min="0" placeholder="Enter consumed unit" required
         style="padding: 10px; width: 100%; border-radius: 8px; border: 1px solid #ccc; font-size: 16px;">
-    
+
     <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
         <input type="submit" value="Calculate"
             style="padding: 8px 16px; background-color: #4CAF50; color: white; border: none; border-radius: 6px; font-size: 14px; cursor: pointer;">
-        
+
         <a href="https://bpdb.portal.gov.bd/sites/default/files/files/bpdb.portal.gov.bd/page/4a0f045a_1415_45f1_9e7c_02a8ed4f103c/2024-03-01-13-45-740f1fb3c50588f18077bdce93250b9a.pdf" target="_blank"
            style="padding: 8px 16px; background-color: #2196F3; color: white; text-decoration: none; border-radius: 6px; font-size: 14px; display: inline-block;">
             View Tariff Rate
@@ -160,6 +161,7 @@ TEMPLATE = """
 </body>
 </html>
 """
+
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -206,5 +208,6 @@ def index():
 
     return render_template_string(TEMPLATE, bill=bill)
 
+
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=20020)
+    app.run(host='0.0.0.0', port=10010)
