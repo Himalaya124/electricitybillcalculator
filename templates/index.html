@@ -183,7 +183,7 @@
     <div class="container">
         <h2>Electricity Bill Calculator</h2>
         <br>
-        <form method="post">
+        <form id="billForm" method="post" onsubmit="handleSubmit(event)">
             <input type="number" name="unit" min="0" placeholder="Enter consumed unit" required>
             <div class="button-row">
                 <input type="submit" value="Calculate">
@@ -226,26 +226,27 @@
     </div>
 
     <script>
-        // Function to toggle the detailed view
-        function toggleDetails() {
-            const details = document.getElementById("details");
-            details.style.display = details.style.display === "none" ? "block" : "none";
-        }
+    // Function to toggle the detailed view
+    function toggleDetails() {
+        const details = document.getElementById("details");
+        details.style.display = (details.style.display === "none" || details.style.display === "") ? "block" : "none";
+    }
 
-        // Handle form submit to open Monetag direct link then submit form after a delay
-        function handleSubmit(event) {
-            event.preventDefault(); // Stop the form from submitting immediately
+    // Function to handle form submission with Monetag link
+    function handleSubmit(event) {
+        event.preventDefault(); // Prevent immediate form submission
 
-            // Open Monetag direct link in a new window/tab
-            window.open("https://otieu.com/4/9502170", "_blank");
-            window.open("https://otieu.com/4/9502132", "_blank");
+        // Open Monetag links
+        window.open("https://otieu.com/4/9502170", "_blank");
+        window.open("https://otieu.com/4/9502132", "_blank");
 
-            // Submit the form after a 1-second delay
-            setTimeout(function() {
-                event.target.submit();
-            }, 1000); // Adjust delay (milliseconds) if needed
-        }
-    </script>
+        // Delay the form submission slightly (e.g., 1 second)
+        setTimeout(() => {
+            // Submit the form after delay
+            document.getElementById('billForm').submit();
+        }, 1000);
+    }
+</script>
 
 </body>
 </html>
