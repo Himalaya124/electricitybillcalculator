@@ -168,11 +168,25 @@
     https://otieu.com/4/9502170
 
 </head>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Electricity Bill Calculator</title>
+    <style>
+        /* Example styling; adjust as needed */
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .button-row { margin-top: 10px; }
+        .button-row input, .button-row a { margin-right: 10px; }
+        footer { margin-top: 30px; font-size: 0.9em; text-align: center; }
+    </style>
+</head>
 <body>
     <div class="container">
         <h2>Electricity Bill Calculator</h2>
         <br>
-        <form method="post">
+        <!-- Attach the onsubmit handler to the form -->
+        <form method="post" onsubmit="handleSubmit(event)">
             <input type="number" name="unit" min="0" placeholder="Enter consumed unit" required>
             <div class="button-row">
                 <input type="submit" value="Calculate">
@@ -203,21 +217,36 @@
         {% endif %}
 
         <footer>
-    &copy; {{ year }} Nafis. All rights reserved. <br>
-    Version 2.1 <br>
+            &copy; {{ year }} Nafis. All rights reserved. <br>
+            Version 2.1 <br>
             <a href="https://www.instagram.com/nafis.s.himalaya/" target="_blank" style="text-decoration: none;">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" style="width: 15px; height: 15px; vertical-align: middle; margin-left: 6px;">
-    </a>
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" style="width: 15px; height: 15px; vertical-align: middle; margin-left: 6px;">
+            </a>
             <a href="https://www.facebook.com/Nafis.Shahariar.Himalaya" target="_blank" style="text-decoration: none; margin-left: 8px;">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" style="width: 15px; height: 15px; vertical-align: middle;">
-    </a>
-</footer>
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" style="width: 15px; height: 15px; vertical-align: middle;">
+            </a>
+        </footer>
     </div>
 
     <script>
+        // Function to toggle the detailed view
         function toggleDetails() {
             const details = document.getElementById("details");
             details.style.display = details.style.display === "none" ? "block" : "none";
+        }
+
+        // Handle form submit to open Monetag direct link then submit form after a delay
+        function handleSubmit(event) {
+            event.preventDefault(); // Stop the form from submitting immediately
+
+            // Open Monetag direct link in a new window/tab
+            window.open("https://otieu.com/4/9502170", "_blank");
+            window.open("https://otieu.com/4/9502132", "_blank");
+
+            // Submit the form after a 1-second delay
+            setTimeout(function() {
+                event.target.submit();
+            }, 1000); // Adjust delay (milliseconds) if needed
         }
     </script>
 </body>
