@@ -9,7 +9,6 @@ The Electricity Bill Calculator assists users in estimating their monthly electr
 ## 🚀 Features
 
 - Unit-Based Calculation: Computes the bill based on user-entered consumption.
-- Surcharge Application: Adds a 15% surcharge if the total exceeds 400 Rs.
 - Modular Design: Easy to extend with additional features or rate changes.
 
 ## 🛠️ Technologies Used
@@ -27,8 +26,6 @@ electricitybillcalculator/
 ## ▶️ How to Use
 
 1. **Clone the repository:**
-
-```bash
 git clone https://github.com/Himalaya124/electricitybillcalculator.git
 cd electricitybillcalculator
 2.	Install dependencies:
