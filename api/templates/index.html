@@ -1,1 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Electricity Bill Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Favicons -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
+
+    <style>
+        :root {
+            --primary: #4CAF50;
+            --primary-dark: #388E3C;
+            --accent-blue: #2196F3;
+            --accent-yellow: #FFC107;
+            --accent-purple: #9C27B0;
+            --bg: #f5f5f5;
+            --text: #333;
+            --card-bg: #fff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            padding: 30px 25px;
+            border-radius: 18px;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .version {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        input[type="number"] {
+            display: block;
+            margin: 0 auto 20px auto;
+            padding: 12px;
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            background-color: var(--bg);
+        }
+
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .button-row input[type="submit"],
+        .button-row a,
+        .toggle-btn,
+        .print-btn {
+            padding: 12px 22px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            background-color: #f0f0f0;
+            color: #333;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .button-row input[type="submit"]:hover,
+        .button-row a:hover,
+        .toggle-btn:hover,
+        .print-btn:hover {
+            background-color: #e0e0e0;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--text);
+        }
+
+        .details {
+            text-align: left;
+            margin-top: 20px;
+            background: #f1f1f1;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: #222;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+
+        footer a img {
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+        }
+
+        /* Make layout adapt on smaller screens */
+        @media screen and (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .button-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            input[type="number"] {
+                max-width: 100%;
+            }
+
+            .button-row input[type="submit"],
+            .button-row a {
+                width: 100%;
+                text-align: center;
+            }
+
+            footer a img {
+                margin-left: 4px;
+            }
+        }
+    </style>
+    <script src="https://fpyf8.com/88/tag.min.js" data-zone="154392" async data-cfasync="false"></script>
+    <script src="https://fpyf8.com/88/tag.min.js" data-zone="154401" async data-cfasync="false"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h2>Electricity Bill Calculator</h2>
+        <br>
+        <form method="post">
+            <input type="number" name="unit" min="0" placeholder="Enter consumed unit" required>
+            <div class="button-row">
+                <input type="submit" value="Calculate">
+                <a href="https://bpdb.portal.gov.bd/sites/default/files/files/bpdb.portal.gov.bd/page/4a0f045a_1415_45f1_9e7c_02a8ed4f103c/2024-03-01-13-45-740f1fb3c50588f18077bdce93250b9a.pdf" target="_blank">
+                    View Tariff Rate
+                </a>
+            </div>
+        </form>
+
+        {% if bill %}
+            <div class="result">
+                Your electricity bill is <strong>{{ bill }} Taka</strong> only.
+                <br><br>
+                <button class="toggle-btn" onclick="toggleDetails()">View Details</button>
+            </div>
+        {% endif %}
+
+        {% if breakdown %}
+        <div id="details" class="details" style="display:none;">
+            <h3 style="margin-bottom: 10px;">Details of Your Electricity Bill:</h3>
+            <pre style="font-family: monospace; font-size: 15px; line-height: 0.7;">
+{% for line in breakdown %}
+{{ line }}
+{% endfor %}
+            </pre>
+            <div style="color: red; font-size: 0.95rem;">View Tariff Rate to see per unit price.</div>
+        </div>
+        {% endif %}
+
+        <footer>
+    &copy; {{ year }} Nafis. All rights reserved. <br>
+    Version 2.1 <br>
+            <a href="https://www.instagram.com/nafis.s.himalaya/" target="_blank" style="text-decoration: none;">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" style="width: 15px; height: 15px; vertical-align: middle; margin-left: 6px;">
+    </a>
+            <a href="https://www.facebook.com/Nafis.Shahariar.Himalaya" target="_blank" style="text-decoration: none; margin-left: 8px;">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" style="width: 15px; height: 15px; vertical-align: middle;">
+    </a>
+</footer>
+    </div>
+
+    <script>
+        function toggleDetails() {
+            const details = document.getElementById("details");
+            details.style.display = details.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</body>
+</html>
