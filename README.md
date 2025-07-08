@@ -1,4 +1,4 @@
-# ☀️ ELECTRICITYBILLCALCULATOR
+# ☀️ ELECTRICITY BILL CALCULATOR
 
 **Empowering Smarter Electricity Cost Decisions Daily**
 
@@ -15,8 +15,8 @@
 
 - [Overview](#overview)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
 - [Usage](#usage)
 - [Testing](#testing)
 
@@ -65,6 +65,8 @@ cd electricitybillcalculator
 # 3. Install the dependencies (Using pip):
 pip install -r requirements.txt
 
+```
+
 ▶️ Usage
 
 Run the project with:
@@ -79,7 +81,6 @@ python main.py
 electricitybillcalculator uses the test_framework test framework. Run the test suite with:
 
 pytest
-
 
 ---
 
