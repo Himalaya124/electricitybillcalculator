@@ -70,20 +70,13 @@ pip install -r requirements.txt
 ▶️ Usage
 
 Run the project with:
-
+```bash
 python main.py
-
-
----
-
+```
 ✅ Testing
 
 electricitybillcalculator uses the test_framework test framework. Run the test suite with:
-
+```bash
 pytest
-
----
-
+```
 🔙 Return
-
----
